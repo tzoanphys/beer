@@ -1,60 +1,95 @@
 import './style.css'
-import typescriptLogo from './assets/typescript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.ts'
+import { initLocale, onLocaleChange, t } from './i18n.ts'
+import {
+  refreshRailLabels,
+  renderHeader,
+  renderLeftRail,
+  renderRightRail,
+  setupGlobalListeners,
+  setupNav,
+  updateActiveLink,
+} from './nav.ts'
+import { getPage, type PageId } from './pages.ts'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const app = document.querySelector<HTMLDivElement>('#app')!
 
-<div class="ticks"></div>
+let currentPage: PageId = 'home'
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+function renderStars(): string {
+  const stars = Array.from({ length: 80 }, (_, i) => {
+    const x = Math.random() * 100
+    const y = Math.random() * 100
+    const size = Math.random() * 2 + 0.5
+    const delay = Math.random() * 5
+    const duration = Math.random() * 3 + 2
+    return `<span class="star" style="left:${x}%;top:${y}%;width:${size}px;height:${size}px;animation-delay:${delay}s;animation-duration:${duration}s"></span>`
+  }).join('')
+  return `<div class="starfield" aria-hidden="true">${stars}</div>`
+}
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+function renderPage(id: PageId, animate = true): void {
+  currentPage = id
+  const page = getPage(id)
+  const main = document.querySelector<HTMLElement>('#main-content')
+  if (!main) return
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+  const update = () => {
+    main.innerHTML = page.render()
+    updateActiveLink(id)
+    updateFooter()
+  }
+
+  if (!animate) {
+    update()
+    return
+  }
+
+  main.classList.add('page-exit')
+  setTimeout(() => {
+    update()
+    main.classList.remove('page-exit')
+    main.classList.add('page-enter')
+    requestAnimationFrame(() => main.classList.remove('page-enter'))
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, 180)
+}
+
+function updateFooter(): void {
+  const footer = document.querySelector<HTMLElement>('.site-footer p')
+  if (footer) footer.textContent = t('footer')
+}
+
+function refreshAll(): void {
+  refreshRailLabels()
+  renderPage(currentPage, false)
+}
+
+function init(): void {
+  initLocale()
+
+  app.innerHTML = `
+    ${renderStars()}
+    <div class="cosmos-bg" aria-hidden="true"></div>
+    <div class="cosmos-grid" aria-hidden="true"></div>
+    <div class="cosmos-nebula cosmos-nebula-red" aria-hidden="true"></div>
+    <div class="cosmos-nebula cosmos-nebula-teal" aria-hidden="true"></div>
+    <div class="app-shell">
+      ${renderLeftRail()}
+      <div class="app-main">
+        ${renderHeader()}
+        <main id="main-content">${getPage('home').render()}</main>
+        <footer class="site-footer">
+          <p>${t('footer')}</p>
+        </footer>
+      </div>
+      ${renderRightRail()}
+    </div>
+  `
+
+  setupGlobalListeners(app)
+  setupNav((id) => renderPage(id), refreshAll)
+  updateActiveLink('home')
+  onLocaleChange(refreshAll)
+}
+
+init()
