@@ -1,0 +1,5 @@
+# Go into the frontend folder
+cd frontend
+
+# Create a Vite React app in the CURRENT folder (the dot . means "here")
+npm create vite@latest . -- --template react
