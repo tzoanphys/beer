@@ -32,9 +32,12 @@ export function renderLeftRail(): string {
     </aside>
 
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <div class="nav-backdrop" aria-hidden="true"></div>
       <div class="nav-panel">
         <div class="nav-panel-brand">
-          <img class="nav-panel-logo" src="/sta-kac-logo.png" alt="${t('brand')}" width="64" height="64" />
+          <button class="nav-panel-logo-btn" type="button" data-nav="home" aria-label="${t('brand')} — ${t('navHome')}">
+            <img class="nav-panel-logo" src="/sta-kac-logo.png" alt="" width="64" height="64" />
+          </button>
         </div>
         <div class="nav-panel-header">
           <span class="nav-panel-title">${t('navTitle')}</span>
@@ -43,7 +46,6 @@ export function renderLeftRail(): string {
         <ul class="nav-list">${navLinks}</ul>
         <p class="nav-footer">${t('navFooter')}</p>
       </div>
-      <div class="nav-backdrop" aria-hidden="true"></div>
     </nav>
   `
 }
@@ -57,6 +59,7 @@ export function renderRightRail(): string {
     </aside>
 
     <div id="lang-panel" class="lang-panel" aria-label="Language selection">
+      <div class="lang-backdrop" aria-hidden="true"></div>
       <div class="lang-panel-inner">
         <div class="lang-panel-header">
           <span class="lang-panel-title">${t('language')}</span>
@@ -64,7 +67,6 @@ export function renderRightRail(): string {
         </div>
         <ul class="lang-list">${renderLangOptions()}</ul>
       </div>
-      <div class="lang-backdrop" aria-hidden="true"></div>
     </div>
   `
 }
@@ -134,20 +136,19 @@ function bindControls(): void {
   langBackdrop?.addEventListener('click', closeLang)
 }
 
-export function setupNav(navigate: (id: PageId) => void, localeChange: () => void): void {
+export function setupGlobalListeners(navigate: (id: PageId) => void): void {
   onNavigate = navigate
-  onLocaleChange = localeChange
-  bindControls()
-}
 
-export function setupGlobalListeners(root: HTMLElement): void {
-  root.addEventListener('click', (e) => {
+  const win = window as Window & { __staKacClickHandler?: (e: Event) => void }
+  if (win.__staKacClickHandler) {
+    document.removeEventListener('click', win.__staKacClickHandler)
+  }
+
+  const clickHandler = (e: Event) => {
     const navTarget = (e.target as HTMLElement).closest<HTMLElement>('[data-nav]')
     if (navTarget) {
       e.preventDefault()
       onNavigate(navTarget.dataset.nav as PageId)
-      closeNav()
-      updateActiveLink(navTarget.dataset.nav as PageId)
       return
     }
 
@@ -157,14 +158,31 @@ export function setupGlobalListeners(root: HTMLElement): void {
       closeLang()
       onLocaleChange()
     }
-  })
+  }
 
-  document.addEventListener('keydown', (e) => {
+  win.__staKacClickHandler = clickHandler
+  document.addEventListener('click', clickHandler)
+
+  const winKey = window as Window & { __staKacEscapeHandler?: (e: KeyboardEvent) => void }
+  if (winKey.__staKacEscapeHandler) {
+    document.removeEventListener('keydown', winKey.__staKacEscapeHandler)
+  }
+
+  const escapeHandler = (e: KeyboardEvent) => {
     if (e.key === 'Escape') {
       closeNav()
       closeLang()
     }
-  })
+  }
+
+  winKey.__staKacEscapeHandler = escapeHandler
+  document.addEventListener('keydown', escapeHandler)
+}
+
+export function setupNav(navigate: (id: PageId) => void, localeChange: () => void): void {
+  onNavigate = navigate
+  onLocaleChange = localeChange
+  bindControls()
 }
 
 export function updateActiveLink(id: PageId): void {

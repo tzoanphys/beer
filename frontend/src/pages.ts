@@ -86,29 +86,22 @@ export function getPages(): Page[] {
           <header class="page-header">
             <p class="eyebrow">${t('aboutEyebrow')}</p>
             <h1>${t('aboutTitle')}</h1>
-            <p class="lead">${t('aboutLead')}</p>
           </header>
-          <div class="about-grid">
-            <article class="card card-glow">
-              <div class="card-icon">🔬</div>
-              <h2>${t('aboutLab')}</h2>
-              <p>${t('aboutLabText')}</p>
-            </article>
-            <article class="card card-glow">
-              <div class="card-icon">🌌</div>
-              <h2>${t('aboutVision')}</h2>
-              <p>${t('aboutVisionText')}</p>
-            </article>
-            <article class="card card-glow">
-              <div class="card-icon">🍺</div>
-              <h2>${t('aboutCraft')}</h2>
-              <p>${t('aboutCraftText')}</p>
-            </article>
+
+          <div class="about-story">
+            <figure class="founders-photo">
+              <div class="founders-photo-frame">
+                <img src="/founders.jpg" alt="${t('aboutPhotoCaption')}" loading="lazy" />
+              </div>
+              <figcaption>${t('aboutPhotoCaption')}</figcaption>
+            </figure>
+
+            <div class="about-story-text">
+              <p class="about-intro">${t('aboutIntro')}</p>
+              <p class="about-site">${t('aboutSite')}</p>
+              <p class="about-social">${t('aboutSocial')}</p>
+            </div>
           </div>
-          <blockquote class="pull-quote">
-            <p>${t('aboutQuote')}</p>
-            <cite>${t('aboutQuoteAuthor')}</cite>
-          </blockquote>
         </section>
       `,
     },

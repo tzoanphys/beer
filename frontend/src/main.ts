@@ -12,6 +12,7 @@ import {
 import { getPage, type PageId } from './pages.ts'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
+const validPages: PageId[] = ['home', 'who-we-are', 'our-collection', 'more-about-beer']
 
 let currentPage: PageId = 'home'
 
@@ -27,31 +28,43 @@ function renderStars(): string {
   return `<div class="starfield" aria-hidden="true">${stars}</div>`
 }
 
-function renderPage(id: PageId, animate = true): void {
+function pageFromHash(): PageId {
+  const hash = window.location.hash.replace('#', '')
+  return validPages.includes(hash as PageId) ? (hash as PageId) : 'home'
+}
+
+function buildUrl(id: PageId): string {
+  const base = `${window.location.pathname}${window.location.search}`
+  return id === 'home' ? base : `${base}#${id}`
+}
+
+function renderPage(id: PageId): void {
   currentPage = id
   const page = getPage(id)
   const main = document.querySelector<HTMLElement>('#main-content')
   if (!main) return
 
-  const update = () => {
-    main.innerHTML = page.render()
-    updateActiveLink(id)
-    updateFooter()
-  }
+  main.innerHTML = page.render()
+  updateActiveLink(id)
+  updateFooter()
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
-  if (!animate) {
-    update()
+function navigateTo(id: PageId): void {
+  if (id === currentPage) {
+    closeNavIfOpen()
     return
   }
 
-  main.classList.add('page-exit')
-  setTimeout(() => {
-    update()
-    main.classList.remove('page-exit')
-    main.classList.add('page-enter')
-    requestAnimationFrame(() => main.classList.remove('page-enter'))
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, 180)
+  history.pushState({ page: id }, '', buildUrl(id))
+  renderPage(id)
+  closeNavIfOpen()
+}
+
+function closeNavIfOpen(): void {
+  document.getElementById('site-nav')?.classList.remove('open')
+  document.body.classList.remove('nav-open')
+  document.querySelector<HTMLButtonElement>('.menu-toggle')?.setAttribute('aria-expanded', 'false')
 }
 
 function updateFooter(): void {
@@ -61,11 +74,19 @@ function updateFooter(): void {
 
 function refreshAll(): void {
   refreshRailLabels()
-  renderPage(currentPage, false)
+  renderPage(currentPage)
+}
+
+function teardown(): void {
+  const win = window as Window & { __staKacTeardown?: () => void }
+  win.__staKacTeardown?.()
+  win.__staKacTeardown = undefined
 }
 
 function init(): void {
+  teardown()
   initLocale()
+  currentPage = pageFromHash()
 
   app.innerHTML = `
     ${renderStars()}
@@ -77,7 +98,7 @@ function init(): void {
       ${renderLeftRail()}
       <div class="app-main">
         ${renderHeader()}
-        <main id="main-content">${getPage('home').render()}</main>
+        <main id="main-content">${getPage(currentPage).render()}</main>
         <footer class="site-footer">
           <p>${t('footer')}</p>
         </footer>
@@ -86,10 +107,24 @@ function init(): void {
     </div>
   `
 
-  setupGlobalListeners(app)
-  setupNav((id) => renderPage(id), refreshAll)
-  updateActiveLink('home')
-  onLocaleChange(refreshAll)
+  const popstateHandler = () => {
+    const id = pageFromHash()
+    if (id !== currentPage) renderPage(id)
+  }
+
+  const localeUnsubscribe = onLocaleChange(refreshAll)
+
+  setupGlobalListeners(navigateTo)
+  setupNav(navigateTo, refreshAll)
+  updateActiveLink(currentPage)
+  history.replaceState({ page: currentPage }, '', buildUrl(currentPage))
+  window.addEventListener('popstate', popstateHandler)
+
+  const win = window as Window & { __staKacTeardown?: () => void }
+  win.__staKacTeardown = () => {
+    window.removeEventListener('popstate', popstateHandler)
+    localeUnsubscribe()
+  }
 }
 
 init()

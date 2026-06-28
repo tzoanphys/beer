@@ -57,22 +57,14 @@ const translations: Record<Locale, TranslationDict> = {
       'Where quantum physics meets Belgian craft. Each brew is a scientific experiment — from Schrödinger\'s superposition to dark matter accretion disks.',
     homeCtaCollection: 'Explore Collection',
     homeCtaMission: 'Our Mission',
-    aboutEyebrow: 'Mission Briefing',
+    aboutEyebrow: 'Our Story',
     aboutTitle: 'Who We Are',
-    aboutLead:
-      'A collective of brewmasters, biochemists, and aerospace engineers united by one question: what does perfection taste like at the edge of the known universe?',
-    aboutLab: 'The Lab',
-    aboutLabText:
-      'Our orbital fermentation facility operates at 400 km altitude, where microgravity reveals yeast behavior impossible to replicate on Earth. Every batch is logged, sequenced, and calibrated.',
-    aboutVision: 'The Vision',
-    aboutVisionText:
-      'We believe beer is a science and an art. By combining spectroscopic analysis with centuries of brewing tradition, we push flavor into uncharted territory.',
-    aboutCraft: 'The Craft',
-    aboutCraftText:
-      'From grain selection to bottle conditioning, every variable is controlled. Temperature curves, pH levels, dissolved oxygen — nothing is left to chance.',
-    aboutQuote:
-      '"We don\'t just brew beer. We conduct flavor experiments at the speed of light."',
-    aboutQuoteAuthor: '— Dr. Elena Voss, Chief Fermentation Officer',
+    aboutIntro:
+      'Hello! We are two physicists, Aliaksei and Gianna, and we have worked as postdoctoral researchers at the Université Libre de Bruxelles. We studied theoretical, particle physics, and cosmology. We have started an idea to create our own browsery for people who love science and physics.',
+    aboutSite:
+      'On this site you will find our products, advice, and discussions.',
+    aboutSocial: 'Feel free to follow us on social media!',
+    aboutPhotoCaption: 'Aliaksei & Gianna — Sta&Kac Science Brewery',
     collectionEyebrow: 'Specimen Catalog',
     collectionTitle: 'Our Collection',
     collectionLead:
@@ -126,22 +118,14 @@ const translations: Record<Locale, TranslationDict> = {
       'Là où la précision moléculaire rencontre l\'art interstellaire. Nous brassons la bière comme les astrophysiciens cartographient les galaxies — avec rigueur, passion et une touche de poussière d\'étoiles.',
     homeCtaCollection: 'Découvrir la collection',
     homeCtaMission: 'Notre mission',
-    aboutEyebrow: 'Briefing de mission',
+    aboutEyebrow: 'Notre histoire',
     aboutTitle: 'Qui sommes-nous',
-    aboutLead:
-      'Un collectif de maîtres brasseurs, biochimistes et ingénieurs aérospatiaux uni par une question : à quoi goûte la perfection aux confins de l\'univers connu ?',
-    aboutLab: 'Le laboratoire',
-    aboutLabText:
-      'Notre installation de fermentation orbitale opère à 400 km d\'altitude, où la microgravité révèle des comportements de levure impossibles à reproduire sur Terre. Chaque lot est enregistré, séquencé et calibré.',
-    aboutVision: 'La vision',
-    aboutVisionText:
-      'Nous croyons que la bière est à la fois science et art. En combinant l\'analyse spectroscopique et des siècles de tradition brassicole, nous explorons des saveurs inédites.',
-    aboutCraft: 'Le savoir-faire',
-    aboutCraftText:
-      'De la sélection des grains à la garde en bouteille, chaque variable est maîtrisée. Courbes de température, pH, oxygène dissous — rien n\'est laissé au hasard.',
-    aboutQuote:
-      '« Nous ne brassons pas seulement de la bière. Nous menons des expériences gustatives à la vitesse de la lumière. »',
-    aboutQuoteAuthor: '— Dr Elena Voss, directrice de la fermentation',
+    aboutIntro:
+      'Bonjour ! Nous sommes deux physiciens, Aliaksei et Gianna. Nous avons travaillé comme chercheurs postdoctoraux à l\'Université Libre de Bruxelles, où nous avons étudié la physique des particules théorique et la cosmologie. Nous avons eu l\'idée de créer notre propre brasserie pour les personnes qui aiment la science et la physique.',
+    aboutSite:
+      'Sur ce site, vous trouverez nos produits, nos conseils et nos discussions.',
+    aboutSocial: 'N\'hésitez pas à nous suivre sur les réseaux sociaux.',
+    aboutPhotoCaption: 'Aliaksei & Gianna — Sta&Kac Science Brewery',
     collectionEyebrow: 'Catalogue des spécimens',
     collectionTitle: 'Notre collection',
     collectionLead:
@@ -195,22 +179,14 @@ const translations: Record<Locale, TranslationDict> = {
       'Waar moleculaire precisie interstellaire ambacht ontmoet. Wij brouwen bier zoals astrofysici sterrenstelsels in kaart brengen — met data, passie en een vleugje sterrenstof.',
     homeCtaCollection: 'Collectie verkennen',
     homeCtaMission: 'Onze missie',
-    aboutEyebrow: 'Missiebriefing',
+    aboutEyebrow: 'Ons verhaal',
     aboutTitle: 'Over ons',
-    aboutLead:
-      'Een collectief van brouwmeesters, biochemici en lucht- en ruimtevaartingen verenigd door één vraag: hoe smaakt perfectie aan de rand van het bekende universum?',
-    aboutLab: 'Het lab',
-    aboutLabText:
-      'Onze orbitale fermentatiefaciliteit opereert op 400 km hoogte, waar microzwaartekracht gistgedrag onthult dat op aarde onmogelijk te repliceren is. Elke batch wordt gelogd, gesequenced en gekalibreerd.',
-    aboutVision: 'De visie',
-    aboutVisionText:
-      'Wij geloven dat bier wetenschap én kunst is. Door spectroscopische analyse te combineren met eeuwen brouwtraditie, verkennen wij onbekend smaakterritorium.',
-    aboutCraft: 'Het vak',
-    aboutCraftText:
-      'Van graanselectie tot flesrijping — elke variabele wordt gecontroleerd. Temperatuurcurves, pH-niveaus, opgelost zuurstof — niets wordt aan het toeval overgelaten.',
-    aboutQuote:
-      '"Wij brouwen niet alleen bier. Wij voeren smaakexperimenten uit met lichtsnelheid."',
-    aboutQuoteAuthor: '— Dr. Elena Voss, hoofd fermentatie',
+    aboutIntro:
+      'Hallo! Wij zijn twee natuurkundigen, Aliaksei en Gianna. We werkten als postdoctorale onderzoekers aan de Université Libre de Bruxelles, waar we theoretische deeltjesfysica en kosmologie bestudeerden. We kregen het idee om onze eigen brouwerij te starten voor mensen die van wetenschap en natuurkunde houden.',
+    aboutSite:
+      'Op deze site vind je onze producten, advies en discussies.',
+    aboutSocial: 'Volg ons gerust op sociale media.',
+    aboutPhotoCaption: 'Aliaksei & Gianna — Sta&Kac Science Brewery',
     collectionEyebrow: 'Specimencatalogus',
     collectionTitle: 'Onze collectie',
     collectionLead:
@@ -264,22 +240,14 @@ const translations: Record<Locale, TranslationDict> = {
       'Wo molekulare Präzision interstellares Handwerk trifft. Wir brauen Bier, wie Astrophysiker Galaxien kartieren — mit Daten, Leidenschaft und Sternenstaub.',
     homeCtaCollection: 'Kollektion entdecken',
     homeCtaMission: 'Unsere Mission',
-    aboutEyebrow: 'Missionsbriefing',
+    aboutEyebrow: 'Unsere Geschichte',
     aboutTitle: 'Über uns',
-    aboutLead:
-      'Ein Kollektiv aus Braumeistern, Biochemikern und Luft- und Raumfahrtingenieuren, vereint durch eine Frage: Wie schmeckt Perfektion am Rand des bekannten Universums?',
-    aboutLab: 'Das Labor',
-    aboutLabText:
-      'Unsere orbitale Fermentationsanlage arbeitet in 400 km Höhe, wo Mikrogravitation Hefeverhalten offenbart, das auf der Erde unmöglich ist. Jede Charge wird protokolliert, sequenziert und kalibriert.',
-    aboutVision: 'Die Vision',
-    aboutVisionText:
-      'Wir glauben, Bier ist Wissenschaft und Kunst. Durch spektroskopische Analyse und jahrhundertealte Brautradition erschließen wir unbekanntes Geschmacksgebiet.',
-    aboutCraft: 'Das Handwerk',
-    aboutCraftText:
-      'Von der Malzauswahl bis zur Flaschenreifung — jede Variable wird kontrolliert. Temperaturkurven, pH-Werte, gelöster Sauerstoff — nichts dem Zufall überlassen.',
-    aboutQuote:
-      '„Wir brauen nicht nur Bier. Wir führen Geschmacksexperimente mit Lichtgeschwindigkeit durch."',
-    aboutQuoteAuthor: '— Dr. Elena Voss, Leiterin Fermentation',
+    aboutIntro:
+      'Hallo! Wir sind zwei Physiker, Aliaksei und Gianna. Wir arbeiteten als Postdoktoranden an der Université Libre de Bruxelles, wo wir theoretische Teilchenphysik und Kosmologie studierten. Wir hatten die Idee, unsere eigene Brauerei für Menschen zu gründen, die Wissenschaft und Physik lieben.',
+    aboutSite:
+      'Auf dieser Website finden Sie unsere Produkte, Ratschläge und Diskussionen.',
+    aboutSocial: 'Folgen Sie uns gerne in den sozialen Medien.',
+    aboutPhotoCaption: 'Aliaksei & Gianna — Sta&Kac Science Brewery',
     collectionEyebrow: 'Spezimenkatalog',
     collectionTitle: 'Unsere Kollektion',
     collectionLead:
@@ -333,22 +301,14 @@ const translations: Record<Locale, TranslationDict> = {
       'Όπου η μοριακή ακρίβεια συναντά τη διαστellar τέχνη. Ζυθοποιούμε όπως οι αστροφυσικοί χαρτογραφούν τους γαλαξίες — με δεδομένα, πάθος και μια πινελιά αστρόσκονης.',
     homeCtaCollection: 'Εξερεύνηση συλλογής',
     homeCtaMission: 'Η αποστολή μας',
-    aboutEyebrow: 'Ενημέρωση αποστολής',
+    aboutEyebrow: 'Η ιστορία μας',
     aboutTitle: 'Ποιοι είμαστε',
-    aboutLead:
-      'Ένας συλλογικός χώρος ζυθοποιών, βιοχημικών και μηχανικών αεροδιαστήματος, ενωμένοι από ένα ερώτημα: πώς γεύεται η τελειότητα στα όρια του γνωστού σύμπαντος;',
-    aboutLab: 'Το εργαστήριο',
-    aboutLabText:
-      'Η ορβital εγκατάσταση ζύμωσής μας λειτουργεί σε ύψος 400 χλμ., όπου η μικροβαρύτητα αποκαλύπτει συμπεριφορές ζύμης αδύνατες να αναπαραχθούν στη Γη. Κάθε παρτίδα καταγράφεται, αλληλουχείται και βαθμονομείται.',
-    aboutVision: 'Το όραμα',
-    aboutVisionText:
-      'Πιστεύουμε ότι η μπύρα είναι επιστήμη και τέχνη. Συνδυάζοντας φασματοσκοπική ανάλυση με αιώνες παράδοσης, εξερευνούμε άγνωστες γεύσεις.',
-    aboutCraft: 'Η τέχνη',
-    aboutCraftText:
-      'Από την επιλογή δημητριακών έως την ωρίμανση στη φιάλη — κάθε μεταβλητή ελέγχεται. Καμπύλες θερμοκρασίας, pH, διαλυμένο οξυγόνο — τίποτα δεν αφήνεται στην τύχη.',
-    aboutQuote:
-      '«Δεν ζυθοποιούμε απλώς μπύρα. Διεξάγουμε πειράματα γεύσης με την ταχύτητα του φωτός.»',
-    aboutQuoteAuthor: '— Δρ. Elena Voss, Διευθύντρια ζύμωσης',
+    aboutIntro:
+      'Γεια σας! Είμαστε δύο φυσικοί, ο Aliaksei και η Gianna. Εργαστήκαμε ως μεταδιδακτορικοί ερευνητές στο Université Libre de Bruxelles, όπου μελετήσαμε θεωρητική φυσική σωματιδίων και κοσμολογία. Η ιδέα μας ήταν να δημιουργήσουμε τη δική μας ζυθοποιία για ανθρώπους που αγαπούν την επιστήμη και τη φυσική.',
+    aboutSite:
+      'Σε αυτόν τον ιστότοπο θα βρείτε τα προϊόντα μας, συμβουλές και συζητήσεις.',
+    aboutSocial: 'Μη διστάσετε να μας ακολουθήσετε στα social media.',
+    aboutPhotoCaption: 'Aliaksei & Gianna — Sta&Kac Science Brewery',
     collectionEyebrow: 'Κατάλογος δειγμάτων',
     collectionTitle: 'Η συλλογή μας',
     collectionLead:
