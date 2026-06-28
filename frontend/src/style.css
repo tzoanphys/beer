@@ -904,6 +904,33 @@ body.lang-open .lang-toggle {
   line-height: 1.6;
 }
 
+/* ── Video & Connection ── */
+
+.video-placeholder,
+.connection-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  background: rgba(12, 18, 28, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.video-placeholder p,
+.connection-card p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.connection-card .story-paragraph-accent {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
 /* ── More About Beer ── */
 
 .science-timeline {

@@ -12,7 +12,14 @@ import {
 import { getPage, type PageId } from './pages.ts'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
-const validPages: PageId[] = ['home', 'who-we-are', 'our-collection', 'more-about-beer']
+const validPages: PageId[] = [
+  'home',
+  'who-we-are',
+  'our-collection',
+  'more-about-beer',
+  'video',
+  'connection',
+]
 
 let currentPage: PageId = 'home'
 

@@ -49,6 +49,8 @@ const translations: Record<Locale, TranslationDict> = {
     navWho: 'Who We Are',
     navCollection: 'Our Collection',
     navScience: 'More About Beer',
+    navVideo: 'Video',
+    navConnection: 'Connection',
     language: 'Language',
     footer: '© Sta&Kac Science Brewery — Belgium',
     homeEyebrow: 'Sta&Kac Science Brewery — Belgium',
@@ -106,6 +108,17 @@ const translations: Record<Locale, TranslationDict> = {
       'Light. Fruity. Unfiltered. Weizen radiating the brilliance of a dying star.',
     beerDarkEnergyNote:
       'The force accelerating the universe — captured in every pour.',
+    videoEyebrow: 'Media Lab',
+    videoTitle: 'Video',
+    videoLead:
+      'Brewing experiments, science talks, and behind-the-scenes moments from Sta&Kac.',
+    videoComingSoon: 'New videos are on the way. Check back soon.',
+    connectionEyebrow: 'Get in Touch',
+    connectionTitle: 'Connection',
+    connectionLead:
+      'Reach out, follow our journey, and join the Sta&Kac community.',
+    connectionText:
+      'We would love to hear from you — whether about our beers, science, or collaboration ideas.',
   },
   fr: {
     brand: 'Sta&Kac Science Brewery',
@@ -115,6 +128,8 @@ const translations: Record<Locale, TranslationDict> = {
     navWho: 'Qui sommes-nous',
     navCollection: 'Notre collection',
     navScience: 'En savoir plus sur la bière',
+    navVideo: 'Vidéo',
+    navConnection: 'Connexion',
     language: 'Langue',
     footer: '© 2847 Sta&Kac Science Brewery — Division brasserie scientifique',
     homeEyebrow: 'Sta&Kac Science Brewery — Belgique',
@@ -172,6 +187,17 @@ const translations: Record<Locale, TranslationDict> = {
       'Léger. Fruité. Non filtré. Weizen rayonnant comme une naine blanche.',
     beerDarkEnergyNote:
       'La force qui accélère l\'univers — capturée dans chaque gorgée.',
+    videoEyebrow: 'Labo média',
+    videoTitle: 'Vidéo',
+    videoLead:
+      'Expériences de brassage, conférences scientifiques et coulisses de Sta&Kac.',
+    videoComingSoon: 'De nouvelles vidéos arrivent bientôt. Revenez nous voir.',
+    connectionEyebrow: 'Contact',
+    connectionTitle: 'Connexion',
+    connectionLead:
+      'Contactez-nous, suivez notre aventure et rejoignez la communauté Sta&Kac.',
+    connectionText:
+      'Nous serions ravis d\'échanger avec vous — sur nos bières, la science ou des idées de collaboration.',
   },
   nl: {
     brand: 'Sta&Kac Science Brewery',
@@ -181,6 +207,8 @@ const translations: Record<Locale, TranslationDict> = {
     navWho: 'Over ons',
     navCollection: 'Onze collectie',
     navScience: 'Meer over bier',
+    navVideo: 'Video',
+    navConnection: 'Contact',
     language: 'Taal',
     footer: '© 2847 Sta&Kac Science Brewery — Wetenschappelijke brouwerij',
     homeEyebrow: 'Sta&Kac Science Brewery — België',
@@ -238,6 +266,17 @@ const translations: Record<Locale, TranslationDict> = {
       'Licht. Fruitig. Ongefilterd. Weizen stralend als een witte dwerg.',
     beerDarkEnergyNote:
       'De kracht die het universum versnelt — gevangen in elk glas.',
+    videoEyebrow: 'Medialab',
+    videoTitle: 'Video',
+    videoLead:
+      'Brouwexperimenten, wetenschapsgesprekken en kijkjes achter de schermen bij Sta&Kac.',
+    videoComingSoon: 'Nieuwe video\'s komen binnenkort. Kom later terug.',
+    connectionEyebrow: 'Contact',
+    connectionTitle: 'Contact',
+    connectionLead:
+      'Neem contact op, volg onze reis en word deel van de Sta&Kac-gemeenschap.',
+    connectionText:
+      'We horen graag van je — over onze bieren, wetenschap of samenwerkingsideeën.',
   },
   de: {
     brand: 'Sta&Kac Science Brewery',
@@ -247,6 +286,8 @@ const translations: Record<Locale, TranslationDict> = {
     navWho: 'Über uns',
     navCollection: 'Unsere Kollektion',
     navScience: 'Mehr über Bier',
+    navVideo: 'Video',
+    navConnection: 'Kontakt',
     language: 'Sprache',
     footer: '© 2847 Sta&Kac Science Brewery — Wissenschaftliche Brauerei',
     homeEyebrow: 'Sta&Kac Science Brewery — Belgien',
@@ -304,6 +345,17 @@ const translations: Record<Locale, TranslationDict> = {
       'Hell. Fruchtig. Unfiltriert. Weizen strahlend wie ein Weißer Zwerg.',
     beerDarkEnergyNote:
       'Die Kraft, die das Universum beschleunigt — in jedem Schluck gefangen.',
+    videoEyebrow: 'Medienlabor',
+    videoTitle: 'Video',
+    videoLead:
+      'Brau-Experimente, Wissenschaftsvorträge und Einblicke hinter die Kulissen von Sta&Kac.',
+    videoComingSoon: 'Neue Videos folgen in Kürze. Schauen Sie bald wieder vorbei.',
+    connectionEyebrow: 'Kontakt',
+    connectionTitle: 'Kontakt',
+    connectionLead:
+      'Melden Sie sich, folgen Sie unserer Reise und werden Sie Teil der Sta&Kac-Community.',
+    connectionText:
+      'Wir freuen uns über Ihre Nachricht — zu unseren Bieren, Wissenschaft oder Kooperationsideen.',
   },
   el: {
     brand: 'Sta&Kac Science Brewery',
@@ -313,6 +365,8 @@ const translations: Record<Locale, TranslationDict> = {
     navWho: 'Ποιοι είμαστε',
     navCollection: 'Η συλλογή μας',
     navScience: 'Περισσότερα για τη μπύρα',
+    navVideo: 'Βίντεο',
+    navConnection: 'Επικοινωνία',
     language: 'Γλώσσα',
     footer: '© 2847 Sta&Kac Science Brewery — Επιστημονική ζυθοποιία',
     homeEyebrow: 'Sta&Kac Science Brewery — Βέλγιο',
@@ -370,6 +424,17 @@ const translations: Record<Locale, TranslationDict> = {
       'Ελαφριά. Φρουτώδης. Αφιλτράριστη. Weizen που ακτινοβολεί σαν λευκός νάνος.',
     beerDarkEnergyNote:
       'Η δύναμη που επιταχύνει το σύμπαν — αιχμαλωτισμένη σε κάθε γουλιά.',
+    videoEyebrow: 'Μέσα εργαστήριο',
+    videoTitle: 'Βίντεο',
+    videoLead:
+      'Πειράματα ζυθοποιίας, επιστημονικές ομιλίες και στιγμές από τα παρασκήνια του Sta&Kac.',
+    videoComingSoon: 'Νέα βίντεο έρχονται σύντομα. Επιστρέψτε σύντομα.',
+    connectionEyebrow: 'Επικοινωνία',
+    connectionTitle: 'Επικοινωνία',
+    connectionLead:
+      'Επικοινωνήστε μαζί μας, ακολουθήστε το ταξίδι μας και γίνετε μέλος της κοινότητας Sta&Kac.',
+    connectionText:
+      'Θα χαρούμε να ακούσουμε από εσάς — για τις μπύρες μας, την επιστήμη ή ιδέες συνεργασίας.',
   },
 }
 

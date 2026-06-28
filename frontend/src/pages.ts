@@ -1,6 +1,12 @@
 import { t } from './i18n.ts'
 
-export type PageId = 'home' | 'who-we-are' | 'our-collection' | 'more-about-beer'
+export type PageId =
+  | 'home'
+  | 'who-we-are'
+  | 'our-collection'
+  | 'more-about-beer'
+  | 'video'
+  | 'connection'
 
 export interface Page {
   id: PageId
@@ -194,6 +200,39 @@ export function getPages(): Page[] {
             <p class="formula-label">${t('formulaLabel')}</p>
             <code>C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂ + Energy</code>
             <p class="formula-caption">${t('formulaCaption')}</p>
+          </div>
+        </section>
+      `,
+    },
+    {
+      id: 'video',
+      labelKey: 'navVideo',
+      render: () => `
+        <section class="page page-video">
+          <header class="page-header">
+            <p class="eyebrow">${t('videoEyebrow')}</p>
+            <h1>${t('videoTitle')}</h1>
+            <p class="lead">${t('videoLead')}</p>
+          </header>
+          <div class="video-placeholder">
+            <p>${t('videoComingSoon')}</p>
+          </div>
+        </section>
+      `,
+    },
+    {
+      id: 'connection',
+      labelKey: 'navConnection',
+      render: () => `
+        <section class="page page-connection">
+          <header class="page-header">
+            <p class="eyebrow">${t('connectionEyebrow')}</p>
+            <h1>${t('connectionTitle')}</h1>
+            <p class="lead">${t('connectionLead')}</p>
+          </header>
+          <div class="connection-card">
+            <p>${t('connectionText')}</p>
+            <p class="story-paragraph-accent">${t('aboutSocial')}</p>
           </div>
         </section>
       `,
