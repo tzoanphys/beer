@@ -24,7 +24,7 @@ const validPages: PageId[] = [
 let currentPage: PageId = 'home'
 
 function renderStars(): string {
-  const stars = Array.from({ length: 80 }, (_, i) => {
+  const stars = Array.from({ length: 80 }, () => {
     const x = Math.random() * 100
     const y = Math.random() * 100
     const size = Math.random() * 2 + 0.5

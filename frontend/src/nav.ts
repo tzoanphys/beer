@@ -1,4 +1,4 @@
-import { getLocale, isValidLocale, languages, setLocale, t, type Locale } from './i18n.ts'
+import { getLocale, isValidLocale, languages, setLocale, t } from './i18n.ts'
 import { getPages, type PageId } from './pages.ts'
 
 let onNavigate: (id: PageId) => void = () => {}
