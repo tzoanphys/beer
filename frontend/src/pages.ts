@@ -59,6 +59,25 @@ const beers = [
   },
 ]
 
+function renderStorySection(): string {
+  return `
+    <div class="story-layout">
+      <figure class="founders-photo">
+        <div class="founders-photo-frame">
+          <img src="/founders.jpg" alt="${t('aboutPhotoCaption')}" loading="lazy" />
+        </div>
+        <figcaption>${t('aboutPhotoCaption')}</figcaption>
+      </figure>
+
+      <div class="story-text">
+        <p class="story-paragraph">${t('aboutIntro')}</p>
+        <p class="story-paragraph">${t('aboutSite')}</p>
+        <p class="story-paragraph story-paragraph-accent">${t('aboutSocial')}</p>
+      </div>
+    </div>
+  `
+}
+
 export function getPages(): Page[] {
   return [
     {
@@ -66,10 +85,12 @@ export function getPages(): Page[] {
       labelKey: 'navHome',
       render: () => `
         <section class="page page-home">
-          <div class="hero-text">
+          <div class="home-hero">
             <p class="eyebrow">${t('homeEyebrow')}</p>
-            <h1>${t('homeTitle')}</h1>
-            <p class="lead">${t('homeLead')}</p>
+            <h1 class="home-welcome">${t('homeWelcome')}</h1>
+            <p class="home-brand">${t('homeTitle')}</p>
+            <p class="home-tagline">${t('homeTagline')}</p>
+            <p class="lead home-lead">${t('homeLead')}</p>
             <div class="hero-actions">
               <button class="btn btn-primary" data-nav="our-collection">${t('homeCtaCollection')}</button>
               <button class="btn btn-ghost" data-nav="who-we-are">${t('homeCtaMission')}</button>
@@ -87,21 +108,7 @@ export function getPages(): Page[] {
             <p class="eyebrow">${t('aboutEyebrow')}</p>
             <h1>${t('aboutTitle')}</h1>
           </header>
-
-          <div class="about-story">
-            <figure class="founders-photo">
-              <div class="founders-photo-frame">
-                <img src="/founders.jpg" alt="${t('aboutPhotoCaption')}" loading="lazy" />
-              </div>
-              <figcaption>${t('aboutPhotoCaption')}</figcaption>
-            </figure>
-
-            <div class="about-story-text">
-              <p class="about-intro">${t('aboutIntro')}</p>
-              <p class="about-site">${t('aboutSite')}</p>
-              <p class="about-social">${t('aboutSocial')}</p>
-            </div>
-          </div>
+          ${renderStorySection()}
         </section>
       `,
     },
