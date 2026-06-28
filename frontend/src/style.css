@@ -470,9 +470,14 @@ body.lang-open .lang-toggle {
   transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
 
-.lang-option:hover,
+.lang-option:hover:not(.active) {
+  color: var(--text-h);
+  background: rgba(255, 107, 53, 0.06);
+}
+
 .lang-option.active {
   color: var(--text-h);
+  font-weight: 600;
   background: var(--accent-bg);
   border-left-color: var(--red-glow);
 }

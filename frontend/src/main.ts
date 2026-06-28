@@ -45,7 +45,7 @@ function buildUrl(id: PageId): string {
   return id === 'home' ? base : `${base}#${id}`
 }
 
-function renderPage(id: PageId): void {
+function renderPage(id: PageId, scrollToTop = true): void {
   currentPage = id
   const page = getPage(id)
   const main = document.querySelector<HTMLElement>('#main-content')
@@ -54,7 +54,8 @@ function renderPage(id: PageId): void {
   main.innerHTML = page.render()
   updateActiveLink(id)
   updateFooter()
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  document.title = t('brand')
+  if (scrollToTop) window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 function navigateTo(id: PageId): void {
@@ -81,7 +82,7 @@ function updateFooter(): void {
 
 function refreshAll(): void {
   refreshRailLabels()
-  renderPage(currentPage)
+  renderPage(currentPage, false)
 }
 
 function teardown(): void {
@@ -121,9 +122,10 @@ function init(): void {
 
   const localeUnsubscribe = onLocaleChange(refreshAll)
 
+  setupNav(navigateTo)
   setupGlobalListeners(navigateTo)
-  setupNav(navigateTo, refreshAll)
   updateActiveLink(currentPage)
+  document.title = t('brand')
   history.replaceState({ page: currentPage }, '', buildUrl(currentPage))
   window.addEventListener('popstate', popstateHandler)
 

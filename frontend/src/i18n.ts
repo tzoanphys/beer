@@ -17,8 +17,12 @@ export function getLocale(): Locale {
   return currentLocale
 }
 
+export function isValidLocale(code: string): code is Locale {
+  return languages.some((l) => l.code === code)
+}
+
 export function setLocale(locale: Locale): void {
-  if (currentLocale === locale) return
+  if (!isValidLocale(locale)) return
   currentLocale = locale
   localStorage.setItem(STORAGE_KEY, locale)
   document.documentElement.lang = locale

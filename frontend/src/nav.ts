@@ -1,8 +1,7 @@
-import { getLocale, languages, setLocale, t, type Locale } from './i18n.ts'
+import { getLocale, isValidLocale, languages, setLocale, t, type Locale } from './i18n.ts'
 import { getPages, type PageId } from './pages.ts'
 
 let onNavigate: (id: PageId) => void = () => {}
-let onLocaleChange: () => void = () => {}
 
 function renderLangOptions(): string {
   return languages
@@ -154,9 +153,13 @@ export function setupGlobalListeners(navigate: (id: PageId) => void): void {
 
     const langTarget = (e.target as HTMLElement).closest<HTMLElement>('[data-lang]')
     if (langTarget) {
-      setLocale(langTarget.dataset.lang as Locale)
-      closeLang()
-      onLocaleChange()
+      e.preventDefault()
+      const code = langTarget.dataset.lang
+      if (code && isValidLocale(code)) {
+        setLocale(code)
+        closeLang()
+      }
+      return
     }
   }
 
@@ -179,9 +182,8 @@ export function setupGlobalListeners(navigate: (id: PageId) => void): void {
   document.addEventListener('keydown', escapeHandler)
 }
 
-export function setupNav(navigate: (id: PageId) => void, localeChange: () => void): void {
+export function setupNav(navigate: (id: PageId) => void): void {
   onNavigate = navigate
-  onLocaleChange = localeChange
   bindControls()
 }
 
@@ -200,19 +202,23 @@ export function updateActiveLanguage(): void {
 
 export function refreshRailLabels(): void {
   const pages = getPages()
-  document.querySelectorAll('.nav-link').forEach((link, i) => {
-    link.textContent = t(pages[i]?.labelKey ?? 'navHome')
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    const id = (link as HTMLElement).dataset.nav
+    const page = pages.find((p) => p.id === id)
+    if (page) link.textContent = t(page.labelKey)
   })
 
   const title = document.querySelector('.nav-panel-title')
   const footer = document.querySelector('.nav-footer')
   const langToggle = document.querySelector('.lang-toggle')
   const langTitle = document.querySelector('.lang-panel-title')
+  const navLogoBtn = document.querySelector<HTMLButtonElement>('.nav-panel-logo-btn')
 
   if (title) title.textContent = t('navTitle')
   if (footer) footer.textContent = t('navFooter')
   if (langToggle) langToggle.textContent = t('language')
   if (langTitle) langTitle.textContent = t('language')
+  if (navLogoBtn) navLogoBtn.setAttribute('aria-label', `${t('brand')} — ${t('navHome')}`)
 
   const logoLink = document.querySelector<HTMLAnchorElement>('.logo')
   const logoImg = document.querySelector<HTMLImageElement>('.logo-img')
@@ -223,5 +229,6 @@ export function refreshRailLabels(): void {
 
   const list = document.querySelector('.lang-list')
   if (list) list.innerHTML = renderLangOptions()
+
   updateActiveLanguage()
 }
