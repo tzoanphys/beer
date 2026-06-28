@@ -4,6 +4,10 @@ export const languages = [
   { code: 'nl', label: 'Nederlands' },
   { code: 'de', label: 'Deutsch' },
   { code: 'el', label: 'Ελληνικά' },
+  { code: 'pl', label: 'Polski' },
+  { code: 'es', label: 'Español' },
+  { code: 'it', label: 'Italiano' },
+  { code: 'ru', label: 'Русский' },
 ] as const
 
 export type Locale = (typeof languages)[number]['code']
@@ -439,6 +443,322 @@ const translations: Record<Locale, TranslationDict> = {
       'Επικοινωνήστε μαζί μας, ακολουθήστε το ταξίδι μας και γίνετε μέλος της κοινότητας Sta&Kac.',
     connectionText:
       'Θα χαρούμε να ακούσουμε από εσάς — για τις μπύρες μας, την επιστήμη ή ιδέες συνεργασίας.',
+  },
+  pl: {
+    brand: 'Sta&Kac Science Brewery',
+    navTitle: 'Nawigacja',
+    navFooter: 'Sta&Kac Science Brewery — Belgia',
+    navHome: 'Strona główna',
+    navWho: 'Kim jesteśmy',
+    navCollection: 'Nasza kolekcja',
+    navScience: 'Więcej o piwie',
+    navVideo: 'Wideo',
+    navConnection: 'Kontakt',
+    language: 'Język',
+    footer: '© Sta&Kac Science Brewery — Belgia',
+    homeEyebrow: 'Sta&Kac Science Brewery — Belgia',
+    homeWelcome: 'Witamy w naszym browarze',
+    homeTitle: 'Sta&Kac',
+    homeTagline:
+      'Belgijskie piwo rzemieślnicze inspirowane nauką — warzone przez fizyków dla wszystkich, którzy kochają naukę.',
+    homeLead:
+      'Odkryj naszą kolekcję, porady browarniane i historię każdego nalewania.',
+    homeCtaCollection: 'Zobacz kolekcję',
+    homeCtaMission: 'Kim jesteśmy',
+    homeFeaturedTitle: 'Polecane piwa',
+    homeFeaturedCta: 'Pełna kolekcja',
+    aboutEyebrow: 'Nasza historia',
+    aboutTitle: 'Kim jesteśmy',
+    aboutIntro:
+      'Cześć! Jesteśmy dwójką fizyków, Aliaksei i Gianna. Pracowaliśmy jako badacze postdoktoranci na Université Libre de Bruxelles. Studiowaliśmy fizykę teoretyczną, fizykę cząstek elementarnych i kosmologię. Wpadliśmy na pomysł stworzenia własnego browaru dla osób, które kochają naukę i fizykę.',
+    aboutSite:
+      'Na tej stronie znajdziesz nasze produkty, porady i dyskusje.',
+    aboutSocial: 'Zapraszamy do obserwowania nas w mediach społecznościowych!',
+    aboutPhotoCaption: 'Aliaksei i Gianna — Sta&Kac Science Brewery',
+    collectionEyebrow: 'Katalog okazów',
+    collectionTitle: 'Nasza kolekcja',
+    collectionLead:
+      'Sześć flagowych piw inspirowanych fizyką. Każda etykieta to pojęcie naukowe — każde nalewanie to eksperyment.',
+    specimen: 'Okaz',
+    scienceEyebrow: 'Dział badań',
+    scienceTitle: 'Więcej o piwie',
+    scienceLead:
+      'Nauka stojąca za nalewaniem. Zrozumienie fermentacji na poziomie molekularnym zamienia dobre piwo w coś wyjątkowego.',
+    step1Title: 'Słód i zacieranie',
+    step1Text:
+      'Enzymy przekształcają skrobię w cukry fermentujące. Monitorujemy temperatury saccharification rest z dokładnością do 0,1 °C — różnica między dobrym a transcendentalnym.',
+    step2Title: 'Chemia chmielu',
+    step2Text:
+      'Kwasy alfa izomeryzują się podczas gotowania, tworząc gorycz. Chmiel dodany późno zachowuje lotne terpeny — mircen, humulen, linalol.',
+    step3Title: 'Fermentacja drożdżowa',
+    step3Text:
+      'Saccharomyces cerevisiae zużywa cukry, produkując etanol i estry. Nasze laboratorium utrzymuje 47 własnych szczepów drożdży, każdy skatalogowany genomowo.',
+    step4Title: 'Dojrzewanie i karbonizacja',
+    step4Text:
+      'Dojrzewanie po fermentacji pozwala smakom się zintegrować. Karbonizujemy z precyzją — dokładne objętości CO₂ dla idealnej konsystencji.',
+    formulaLabel: 'Równanie fermentacji',
+    formulaCaption:
+      'Glukoza przekształcona w etanol, dwutlenek węgla i energię — która napędza życie i świetne piwo.',
+    beerSchrodingerNote:
+      'Edycja Superpozycji — dwa stany współistnieją do otwarcia butelki. Mętne IPA i suche IPA w kwantowej harmonii.',
+    beerDarkMatterNote:
+      'Głębokie. Tajemnicze. Niepowstrzymane. Amber ale wirujące na krawędzi horyzontu zdarzeń.',
+    beerBottomQuarkNote:
+      'Subatomowa precyzja. Chmiel z wymianą gluonów, profil fermentacji jak diagram Feynmana.',
+    beerSupergravityNote:
+      'Potężne. Złożone. Bezkresne. Belgijskie tripel z dysku akrecyjnego czarnej dziury.',
+    beerWhiteDwarfNote:
+      'Lekkie. Owocowe. Niefiltrowane. Weizen promieniujące blaskiem umierającej gwiazdy.',
+    beerDarkEnergyNote:
+      'Siła przyspieszająca wszechświat — uwięziona w każdym nalewaniu.',
+    videoEyebrow: 'Laboratorium mediów',
+    videoTitle: 'Wideo',
+    videoLead:
+      'Eksperymenty browarniane, wykłady naukowe i kulisy Sta&Kac.',
+    videoComingSoon: 'Nowe filmy już w drodze. Wróć wkrótce.',
+    connectionEyebrow: 'Kontakt',
+    connectionTitle: 'Kontakt',
+    connectionLead:
+      'Skontaktuj się z nami, śledź naszą podróż i dołącz do społeczności Sta&Kac.',
+    connectionText:
+      'Chętnie usłyszymy od Ciebie — o naszych piwach, nauce lub pomysłach na współpracę.',
+  },
+  ru: {
+    brand: 'Sta&Kac Science Brewery',
+    navTitle: 'Навигация',
+    navFooter: 'Sta&Kac Science Brewery — Бельгия',
+    navHome: 'Главная',
+    navWho: 'О нас',
+    navCollection: 'Наша коллекция',
+    navScience: 'Больше о пиве',
+    navVideo: 'Видео',
+    navConnection: 'Связь',
+    language: 'Язык',
+    footer: '© Sta&Kac Science Brewery — Бельгия',
+    homeEyebrow: 'Sta&Kac Science Brewery — Бельгия',
+    homeWelcome: 'Добро пожаловать в нашу пивоварню',
+    homeTitle: 'Sta&Kac',
+    homeTagline:
+      'Бельгийское крафтовое пиво, вдохновлённое наукой — от физиков для всех, кто любит науку.',
+    homeLead:
+      'Изучите нашу коллекцию, советы по пивоварению и историю каждого бокала.',
+    homeCtaCollection: 'Смотреть коллекцию',
+    homeCtaMission: 'О нас',
+    homeFeaturedTitle: 'Избранные сорта',
+    homeFeaturedCta: 'Вся коллекция',
+    aboutEyebrow: 'Наша история',
+    aboutTitle: 'О нас',
+    aboutIntro:
+      'Привет! Мы двое физиков, Алексей и Джанна. Мы работали постдоками в Université Libre de Bruxelles. Мы изучали теоретическую физику, физику частиц и космологию. У нас появилась идея создать собственную пивоварню для людей, которые любят науку и физику.',
+    aboutSite:
+      'На этом сайте вы найдёте наши продукты, советы и обсуждения.',
+    aboutSocial: 'Подписывайтесь на нас в социальных сетях!',
+    aboutPhotoCaption: 'Алексей и Джанна — Sta&Kac Science Brewery',
+    collectionEyebrow: 'Каталог образцов',
+    collectionTitle: 'Наша коллекция',
+    collectionLead:
+      'Шесть флагманских сортов, вдохновлённых физикой. Каждая этикетка — научная концепция, каждый бокал — эксперимент.',
+    specimen: 'Образец',
+    scienceEyebrow: 'Исследовательский отдел',
+    scienceTitle: 'Больше о пиве',
+    scienceLead:
+      'Наука за каждым бокалом. Понимание брожения на молекулярном уровне превращает хорошее пиво во что-то необыкновенное.',
+    step1Title: 'Солод и затирание',
+    step1Text:
+      'Ферменты превращают крахмал в сахара для брожения. Мы контролируем температуру saccharification rest с точностью до 0,1 °C — разница между хорошим и выдающимся.',
+    step2Title: 'Химия хмеля',
+    step2Text:
+      'Альфа-кислоты изомеризуются при кипении, создавая горечь. Позднее добавление хмеля сохраняет летучие терпены — мирцен, гумулен, линалоол.',
+    step3Title: 'Дрожжевое брожение',
+    step3Text:
+      'Saccharomyces cerevisiae потребляет сахара, производя этанол и эфиры. В нашей лаборатории 47 собственных штаммов дрожжей, каждый каталогизирован по геному.',
+    step4Title: 'Выдержка и карбонизация',
+    step4Text:
+      'Послеброженная выдержка позволяет вкусам объединиться. Мы карбонизируем с точностью — точные объёмы CO₂ для идеальной текстуры.',
+    formulaLabel: 'Уравнение брожения',
+    formulaCaption:
+      'Глюкоза превращается в этанол, углекислый газ и энергию — которая питает жизнь и отличное пиво.',
+    beerSchrodingerNote:
+      'Издание Superposition — два состояния сосуществуют до открытия бутылки. Мутное IPA и сухое IPA в квантовой гармонии.',
+    beerDarkMatterNote:
+      'Глубокое. Загадочное. Неостановимое. Amber ale на краю горизонта событий.',
+    beerBottomQuarkNote:
+      'Субатомная точность. Хмель с обменом глюонами, профиль брожения как диаграмма Фейнмана.',
+    beerSupergravityNote:
+      'Мощное. Сложное. Безграничное. Бельгийский tripel с аккреционного диска.',
+    beerWhiteDwarfNote:
+      'Лёгкое. Фруктовое. Нефильтрованное. Weizen, сияющий как белый карлик.',
+    beerDarkEnergyNote:
+      'Сила, ускоряющая Вселенную — запечатлённая в каждом бокале.',
+    videoEyebrow: 'Медиалаборатория',
+    videoTitle: 'Видео',
+    videoLead:
+      'Пивоваренные эксперименты, научные лекции и закулисье Sta&Kac.',
+    videoComingSoon: 'Новые видео скоро появятся. Загляните позже.',
+    connectionEyebrow: 'Связаться',
+    connectionTitle: 'Связь',
+    connectionLead:
+      'Напишите нам, следите за нашим путём и присоединяйтесь к сообществу Sta&Kac.',
+    connectionText:
+      'Мы будем рады услышать вас — о нашем пиве, науке или идеях сотрудничества.',
+  },
+  es: {
+    brand: 'Sta&Kac Science Brewery',
+    navTitle: 'Navegación',
+    navFooter: 'Sta&Kac Science Brewery — Bélgica',
+    navHome: 'Inicio',
+    navWho: 'Quiénes somos',
+    navCollection: 'Nuestra colección',
+    navScience: 'Más sobre la cerveza',
+    navVideo: 'Vídeo',
+    navConnection: 'Contacto',
+    language: 'Idioma',
+    footer: '© Sta&Kac Science Brewery — Bélgica',
+    homeEyebrow: 'Sta&Kac Science Brewery — Bélgica',
+    homeWelcome: 'Bienvenidos a nuestra cervecería',
+    homeTitle: 'Sta&Kac',
+    homeTagline:
+      'Cerveza artesanal belga inspirada en la ciencia — elaborada por físicos para quienes aman la ciencia.',
+    homeLead:
+      'Explora nuestra colección, consejos de elaboración y la historia detrás de cada servicio.',
+    homeCtaCollection: 'Explorar colección',
+    homeCtaMission: 'Quiénes somos',
+    homeFeaturedTitle: 'Cervezas destacadas',
+    homeFeaturedCta: 'Ver colección completa',
+    aboutEyebrow: 'Nuestra historia',
+    aboutTitle: 'Quiénes somos',
+    aboutIntro:
+      '¡Hola! Somos dos físicos, Aliaksei y Gianna. Trabajamos como investigadores postdoctorales en la Université Libre de Bruxelles. Estudiamos física teórica, física de partículas y cosmología. Tuvimos la idea de crear nuestra propia cervecería para personas que aman la ciencia y la física.',
+    aboutSite:
+      'En este sitio encontrarás nuestros productos, consejos y debates.',
+    aboutSocial: '¡Síguenos en las redes sociales!',
+    aboutPhotoCaption: 'Aliaksei y Gianna — Sta&Kac Science Brewery',
+    collectionEyebrow: 'Catálogo de especímenes',
+    collectionTitle: 'Nuestra colección',
+    collectionLead:
+      'Seis cervezas emblemáticas inspiradas en la física. Cada etiqueta es un concepto científico — cada servicio, un experimento.',
+    specimen: 'Especimen',
+    scienceEyebrow: 'División de investigación',
+    scienceTitle: 'Más sobre la cerveza',
+    scienceLead:
+      'La ciencia detrás del servicio. Comprender la fermentación a nivel molecular transforma una buena cerveza en algo extraordinario.',
+    step1Title: 'Malta y maceración',
+    step1Text:
+      'Las enzimas convierten almidones en azúcares fermentables. Monitorizamos las temperaturas de reposo de sacarificación con una precisión de 0,1 °C.',
+    step2Title: 'Química del lúpulo',
+    step2Text:
+      'Los ácidos alfa se isomerizan durante la ebullición, creando amargor. Los lúpulos añadidos tarde preservan terpenos volátiles — mirceno, humuleno, linalool.',
+    step3Title: 'Fermentación con levadura',
+    step3Text:
+      'Saccharomyces cerevisiae consume azúcares, produciendo etanol y ésteres. Nuestro laboratorio mantiene 47 cepas propias, catalogadas genómicamente.',
+    step4Title: 'Maduración y carbonatación',
+    step4Text:
+      'La maduración post-fermentación permite integrar sabores. Carbonatamos con precisión — volúmenes exactos de CO₂ para la textura perfecta.',
+    formulaLabel: 'Ecuación de fermentación',
+    formulaCaption:
+      'Glucosa transformada en etanol, dióxido de carbono y energía — que impulsa la vida y una gran cerveza.',
+    beerSchrodingerNote:
+      'Edición Superposición — dos estados coexisten hasta abrir la botella. IPA turbia e IPA seca en armonía cuántica.',
+    beerDarkMatterNote:
+      'Profunda. Misteriosa. Imparable. Amber ale en el borde de un horizonte de sucesos.',
+    beerBottomQuarkNote:
+      'Precisión subatómica. Lúpulo de intercambio de gluones, perfil de fermentación tipo diagrama de Feynman.',
+    beerSupergravityNote:
+      'Potente. Compleja. Ilimitada. Tripel belga de un disco de acreción.',
+    beerWhiteDwarfNote:
+      'Ligera. Afrutada. Sin filtrar. Weizen que brilla como una enana blanca.',
+    beerDarkEnergyNote:
+      'La fuerza que acelera el universo — capturada en cada servicio.',
+    videoEyebrow: 'Laboratorio de medios',
+    videoTitle: 'Vídeo',
+    videoLead:
+      'Experimentos de elaboración, charlas científicas y momentos entre bastidores de Sta&Kac.',
+    videoComingSoon: 'Pronto habrá nuevos vídeos. Vuelve pronto.',
+    connectionEyebrow: 'Contacto',
+    connectionTitle: 'Contacto',
+    connectionLead:
+      'Escríbenos, sigue nuestro camino y únete a la comunidad Sta&Kac.',
+    connectionText:
+      'Nos encantaría saber de ti — sobre nuestras cervezas, la ciencia o ideas de colaboración.',
+  },
+  it: {
+    brand: 'Sta&Kac Science Brewery',
+    navTitle: 'Navigazione',
+    navFooter: 'Sta&Kac Science Brewery — Belgio',
+    navHome: 'Home',
+    navWho: 'Chi siamo',
+    navCollection: 'La nostra collezione',
+    navScience: 'Più sulla birra',
+    navVideo: 'Video',
+    navConnection: 'Contatti',
+    language: 'Lingua',
+    footer: '© Sta&Kac Science Brewery — Belgio',
+    homeEyebrow: 'Sta&Kac Science Brewery — Belgio',
+    homeWelcome: 'Benvenuti nel nostro birrificio',
+    homeTitle: 'Sta&Kac',
+    homeTagline:
+      'Birra artigianale belga ispirata alla scienza — prodotta da fisici per chi ama la scienza.',
+    homeLead:
+      'Esplora la nostra collezione, consigli di produzione e la storia dietro ogni bicchiere.',
+    homeCtaCollection: 'Esplora collezione',
+    homeCtaMission: 'Chi siamo',
+    homeFeaturedTitle: 'Birre in evidenza',
+    homeFeaturedCta: 'Collezione completa',
+    aboutEyebrow: 'La nostra storia',
+    aboutTitle: 'Chi siamo',
+    aboutIntro:
+      'Ciao! Siamo due fisici, Aliaksei e Gianna. Abbiamo lavorato come ricercatori postdottorandi all\'Université Libre de Bruxelles. Abbiamo studiato fisica teorica, fisica delle particelle e cosmologia. Abbiamo avuto l\'idea di creare il nostro birrificio per chi ama la scienza e la fisica.',
+    aboutSite:
+      'Su questo sito troverai i nostri prodotti, consigli e discussioni.',
+    aboutSocial: 'Seguici liberamente sui social media!',
+    aboutPhotoCaption: 'Aliaksei e Gianna — Sta&Kac Science Brewery',
+    collectionEyebrow: 'Catalogo campioni',
+    collectionTitle: 'La nostra collezione',
+    collectionLead:
+      'Sei birre iconiche ispirate alla fisica. Ogni etichetta è un concetto scientifico — ogni bicchiere, un esperimento.',
+    specimen: 'Campione',
+    scienceEyebrow: 'Divisione ricerca',
+    scienceTitle: 'Più sulla birra',
+    scienceLead:
+      'La scienza dietro ogni bicchiere. Capire la fermentazione a livello molecolare trasforma una buona birra in qualcosa di straordinario.',
+    step1Title: 'Malto e ammostamento',
+    step1Text:
+      'Gli enzimi convertono gli amidi in zuccheri fermentabili. Monitoriamo le temperature di saccharification rest con precisione di 0,1 °C.',
+    step2Title: 'Chimica del luppolo',
+    step2Text:
+      'Gli acidi alfa si isomerizzano durante la bollitura, creando amaro. I luppoli aggiunti tardi preservano terpeni volatili — mircene, umulene, linalolo.',
+    step3Title: 'Fermentazione del lievito',
+    step3Text:
+      'Saccharomyces cerevisiae consuma zuccheri, producendo etanolo ed esteri. Il nostro laboratorio mantiene 47 ceppi proprietari, catalogati genomicamente.',
+    step4Title: 'Maturazione e carbonatazione',
+    step4Text:
+      'La maturazione post-fermentazione permette ai sapori di integrarsi. Carbonatiamo con precisione — volumi esatti di CO₂ per la consistenza perfetta.',
+    formulaLabel: 'Equazione di fermentazione',
+    formulaCaption:
+      'Glucosio trasformato in etanolo, anidride carbonica ed energia — che alimenta la vita e una grande birra.',
+    beerSchrodingerNote:
+      'Edizione Superposizione — due stati coexistono fino all\'apertura. IPA torbida e IPA secca in armonia quantistica.',
+    beerDarkMatterNote:
+      'Profonda. Misteriosa. Inarrestabile. Amber ale sul bordo di un orizzonte degli eventi.',
+    beerBottomQuarkNote:
+      'Precisione subatomica. Luppolo a scambio di gluoni, profilo di fermentazione da diagramma di Feynman.',
+    beerSupergravityNote:
+      'Potente. Complessa. Illimitata. Tripel belga da un disco di accrezione.',
+    beerWhiteDwarfNote:
+      'Leggera. Fruttata. Non filtrata. Weizen che brilla come una nana bianca.',
+    beerDarkEnergyNote:
+      'La forza che accelera l\'universo — catturata in ogni bicchiere.',
+    videoEyebrow: 'Laboratorio media',
+    videoTitle: 'Video',
+    videoLead:
+      'Esperimenti di birra, talk scientifici e momenti dietro le quinte di Sta&Kac.',
+    videoComingSoon: 'Nuovi video in arrivo. Torna presto.',
+    connectionEyebrow: 'Contatti',
+    connectionTitle: 'Contatti',
+    connectionLead:
+      'Contattaci, segui il nostro percorso e unisciti alla community Sta&Kac.',
+    connectionText:
+      'Ci farebbe piacere sentirti — sulle nostre birre, la scienza o idee di collaborazione.',
   },
 }
 

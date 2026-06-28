@@ -452,6 +452,9 @@ body.lang-open .lang-toggle {
   list-style: none;
   margin: 0;
   padding: 12px 0;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
 }
 
 .lang-option {
