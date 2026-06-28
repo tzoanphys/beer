@@ -33,6 +33,9 @@ export function renderLeftRail(): string {
 
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
       <div class="nav-panel">
+        <div class="nav-panel-brand">
+          <img class="nav-panel-logo" src="/sta-kac-logo.png" alt="${t('brand')}" width="64" height="64" />
+        </div>
         <div class="nav-panel-header">
           <span class="nav-panel-title">${t('navTitle')}</span>
           <button class="nav-close" type="button" aria-label="Close menu">&times;</button>
@@ -70,19 +73,7 @@ export function renderHeader(): string {
   return `
     <header class="site-header">
       <a class="logo" href="#" data-nav="home" aria-label="${t('brand')} — ${t('navHome')}">
-        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <circle cx="16" cy="16" r="14" stroke="url(#logoGrad)" stroke-width="1.5"/>
-          <circle cx="16" cy="16" r="4" fill="#2dd4bf"/>
-          <circle cx="22" cy="10" r="2" fill="#ff4d6d"/>
-          <circle cx="10" cy="22" r="1.5" fill="#14b8a6"/>
-          <defs>
-            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
-              <stop stop-color="#ff4d6d"/>
-              <stop stop-color="#14b8a6"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <span class="logo-text">${t('brand')}</span>
+        <img class="logo-img" src="/sta-kac-logo.png" alt="${t('brand')}" width="72" height="72" />
       </a>
     </header>
   `
@@ -197,15 +188,20 @@ export function refreshRailLabels(): void {
 
   const title = document.querySelector('.nav-panel-title')
   const footer = document.querySelector('.nav-footer')
-  const logoText = document.querySelector('.logo-text')
   const langToggle = document.querySelector('.lang-toggle')
   const langTitle = document.querySelector('.lang-panel-title')
 
   if (title) title.textContent = t('navTitle')
   if (footer) footer.textContent = t('navFooter')
-  if (logoText) logoText.textContent = t('brand')
   if (langToggle) langToggle.textContent = t('language')
   if (langTitle) langTitle.textContent = t('language')
+
+  const logoLink = document.querySelector<HTMLAnchorElement>('.logo')
+  const logoImg = document.querySelector<HTMLImageElement>('.logo-img')
+  const navLogo = document.querySelector<HTMLImageElement>('.nav-panel-logo')
+  if (logoLink) logoLink.setAttribute('aria-label', `${t('brand')} — ${t('navHome')}`)
+  if (logoImg) logoImg.alt = t('brand')
+  if (navLogo) navLogo.alt = t('brand')
 
   const list = document.querySelector('.lang-list')
   if (list) list.innerHTML = renderLangOptions()

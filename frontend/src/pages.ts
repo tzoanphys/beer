@@ -59,19 +59,6 @@ const beers = [
   },
 ]
 
-function heroBottle(): string {
-  return `
-    <div class="hero-bottle" aria-hidden="true">
-      <div class="orbit orbit-1"></div>
-      <div class="orbit orbit-2"></div>
-      <div class="orbit orbit-3"></div>
-      <div class="hero-bottle-glow hero-glow-red"></div>
-      <div class="hero-bottle-glow hero-glow-teal"></div>
-      <img src="/schrodinger-cat.jpeg" alt="" class="hero-bottle-img" width="200" height="300" />
-    </div>
-  `
-}
-
 export function getPages(): Page[] {
   return [
     {
@@ -79,7 +66,6 @@ export function getPages(): Page[] {
       labelKey: 'navHome',
       render: () => `
         <section class="page page-home">
-          ${heroBottle()}
           <div class="hero-text">
             <p class="eyebrow">${t('homeEyebrow')}</p>
             <h1>${t('homeTitle')}</h1>
